@@ -1,6 +1,7 @@
 // swift-tools-version: 5.9
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
+import Foundation
 import PackageDescription
 
 let package = Package(
@@ -143,8 +144,8 @@ let package = Package(
     ]
 )
 
-if Context.environment["MLX_SWIFT_BUILD_DOC"] == "1"
-    || Context.environment["SPI_GENERATE_DOCS"] == "1"
+if ProcessInfo.processInfo.environment["MLX_SWIFT_BUILD_DOC"] == "1"
+    || ProcessInfo.processInfo.environment["SPI_GENERATE_DOCS"] == "1"
 {
     // docc builder
     package.dependencies.append(
